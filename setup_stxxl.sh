@@ -9,6 +9,8 @@ if [ ! -d "stxxl" ]
 then
 git clone http://github.com/stxxl/stxxl.git stxxl
 cd stxxl
+# remove nested git metadata so the parent repo doesn't track STXXL's history
+rm -rf .git
 mkdir build && cd build
 cmake ..
 make
